@@ -14,16 +14,24 @@ die ("Error. NO Id Selected! ");
 <?php
 //proses delete barang
 if (!empty($kode) && $kode != "") {
-$query = "DELETE FROM barang WHERE kd_brg='$kode'";
-$sql = mysqli_query ($conn,$query);
-if ($sql) {
-echo "<h2><font color=blue>Barang telah berhasil dihapus</font></h2>";
+    
+    $query = "SELECT * FROM barang WHERE kd_brg='$kode'";
+    $sql = mysqli_query ($conn,$query);
+    $hasil = mysqli_fetch_array ($sql);
+    $filename = $hasil['image'];
+    unlink('img/uploads/'.$filename);
+    
+    $query = "DELETE FROM barang WHERE kd_brg='$kode'";
+    $sql = mysqli_query ($conn,$query);
+    
+    if ($sql) {
+        echo "<h2><font color=blue>Barang telah berhasil dihapus</font></h2>";
+    } else {
+        echo "<h2><font color=red>Barang gagal dihapus</font></h2>";
+    }
+    echo "Klik <a href='index_admin.php?page=displaybarang'>di sini</a> untuk kembali ke halaman display barang";
 } else {
-echo "<h2><font color=red>Barang gagal dihapus</font></h2>";
-}
-echo "Klik <a href='index_admin.php?page=displaybarang'>di sini</a> untuk kembali ke halaman display barang";
-} else {
-die ("Access Denied");
+    die ("Access Denied");
 }
 ?>
 </body>

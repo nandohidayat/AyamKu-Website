@@ -10,10 +10,11 @@ if (isset($_POST['Edit'])) {
 	$hargabeli = $_POST['hargabeli'];
 	$stok = $_POST['stok'];
 	$stok_min = $_POST['stok_min'];
+	$desc = $_POST['desc'];
 	$fileName = $_FILES["image"]["name"];
 	
 	//insert barang
-	$query = "INSERT INTO barang values('$kode','$nama','$satuan','$harga','$hargabeli','$stok','$stok_min','$fileName')";
+	$query = "INSERT INTO barang values('$kode','$nama','$satuan','$harga','$hargabeli','$stok','$stok_min','$desc','$fileName')";
 	$sql = mysqli_query ($conn,$query);
 	
 	$targetDir = "img/uploads/";
@@ -85,6 +86,10 @@ echo "<meta http-equiv='refresh' content='0;URL=index_admin.php?page=displaybara
 <tr>
 <td>Stok Minimal</td>
 <td>: <input type="text" name="stok_min" size="10" value=""></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>: <textarea name="desc">Write here...</textarea></td>
 </tr>
 <tr>
 <td>Gambar</td>
