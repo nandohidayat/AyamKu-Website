@@ -37,5 +37,5 @@
     $pdf->Ln(8);
     $pdf->Cell(0,0,$bayar - $total,0,1,'R');
     
-    $pdf->Output();
+    $pdf->Output('','Nota Pembelian '.$user.'');
 ?>
