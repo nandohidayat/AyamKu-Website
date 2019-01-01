@@ -70,3 +70,30 @@
 [31-Dec-2018 09:05:14 UTC] PHP Stack trace:
 [31-Dec-2018 09:05:14 UTC] PHP   1. {main}() /home/ubuntu/workspace/api/user/read.php:0
 [31-Dec-2018 09:05:14 UTC] PHP   2. mysqli_fetch_assoc() /home/ubuntu/workspace/api/user/read.php:13
+[01-Jan-2019 03:55:45 UTC] PHP Fatal error:  Uncaught exception 'Exception' with message 'FPDF error: No font has been set' in /home/ubuntu/workspace/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/ubuntu/workspace/fpdf/fpdf.php(625): FPDF->Error('No font has bee...')
+#1 /home/ubuntu/workspace/api/jual/pdf.php(15): FPDF->Cell(40, 10, 'Nama Pelanggan:')
+#2 {main}
+  thrown in /home/ubuntu/workspace/fpdf/fpdf.php on line 271
+[01-Jan-2019 03:56:00 UTC] PHP Fatal error:  Using $this when not in object context in /home/ubuntu/workspace/api/jual/pdf.php on line 15
+[01-Jan-2019 03:56:00 UTC] PHP Stack trace:
+[01-Jan-2019 03:56:00 UTC] PHP   1. {main}() /home/ubuntu/workspace/api/jual/pdf.php:0
+[01-Jan-2019 03:56:11 UTC] PHP Fatal error:  Uncaught exception 'Exception' with message 'FPDF error: No page has been added yet' in /home/ubuntu/workspace/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/ubuntu/workspace/fpdf/fpdf.php(1450): FPDF->Error('No page has bee...')
+#1 /home/ubuntu/workspace/fpdf/fpdf.php(643): FPDF->_out('BT 2.83 264.79 ...')
+#2 /home/ubuntu/workspace/api/jual/pdf.php(16): FPDF->Cell(40, 10, 'Nama Pelanggan:')
+#3 {main}
+  thrown in /home/ubuntu/workspace/fpdf/fpdf.php on line 271
+[01-Jan-2019 03:57:34 UTC] PHP Parse error:  syntax error, unexpected '}' in /home/ubuntu/workspace/api/jual/pdf.php on line 9
+[01-Jan-2019 03:58:07 UTC] PHP Parse error:  syntax error, unexpected ',' in /home/ubuntu/workspace/api/jual/pdf.php on line 15
+[01-Jan-2019 04:01:21 UTC] PHP Fatal error:  Class 'PDF' not found in /home/ubuntu/workspace/api/jual/pdf.php on line 4
+[01-Jan-2019 04:01:21 UTC] PHP Stack trace:
+[01-Jan-2019 04:01:21 UTC] PHP   1. {main}() /home/ubuntu/workspace/api/jual/pdf.php:0
+[01-Jan-2019 04:06:26 UTC] PHP Fatal error:  Function name must be a string in /home/ubuntu/workspace/api/jual/pdf.php on line 4
+[01-Jan-2019 04:06:26 UTC] PHP Stack trace:
+[01-Jan-2019 04:06:26 UTC] PHP   1. {main}() /home/ubuntu/workspace/api/jual/pdf.php:0
+[01-Jan-2019 04:06:59 UTC] PHP Fatal error:  Function name must be a string in /home/ubuntu/workspace/api/jual/pdf.php on line 4
+[01-Jan-2019 04:06:59 UTC] PHP Stack trace:
+[01-Jan-2019 04:06:59 UTC] PHP   1. {main}() /home/ubuntu/workspace/api/jual/pdf.php:0
