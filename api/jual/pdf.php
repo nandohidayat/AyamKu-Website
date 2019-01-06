@@ -4,6 +4,7 @@
     $user=$_GET['username']; 
     $total=$_GET['total']; 
     $bayar=$_GET['bayar'];
+    $id_jual=$_GET['id_jual'];
     
     $pdf = new FPDF('P', 'mm', array(80, 115));
     $pdf->SetTitle('Nota Pembelian');
@@ -37,5 +38,5 @@
     $pdf->Ln(8);
     $pdf->Cell(0,0,$bayar - $total,0,1,'R');
     
-    $pdf->Output('','Nota Pembelian '.$user.'');
+    $pdf->Output('','Nota Pembelian '.$id_jual.'');
 ?>
