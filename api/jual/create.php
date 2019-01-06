@@ -2,6 +2,7 @@
  
 $conn = mysqli_connect("localhost","nandohidayat", "", "penjualan"); 
 
+$gerai = $_GET['gerai'];
 $puser = $_GET['username']; 
 $ptotal = $_GET['total']; 
 $pbayar = $_GET['bayar']; 
@@ -9,9 +10,9 @@ $items = $_GET['items'];
  
 $query = "INSERT 
             INTO 
-                jual (user_id, total, bayar) 
+                jual (kd_gerai, user_id, total, bayar) 
             VALUES 
-                ('".$puser."',".$ptotal.",".$pbayar.")"; 
+                ('".$gerai."','".$puser."',".$ptotal.",".$pbayar.")"; 
 
 $data = array();
 
@@ -38,7 +39,7 @@ if(mysqli_query($conn, $query)) {
     $data[0]['status1'] = 'failed';
 }
 
-$data[0]['pdf'] = 'http://ayam-ku-nandohidayat.c9users.io/api/jual/pdf.php?username='.$puser.'&total='.$ptotal.'&bayar='.$pbayar.'&id_jual='.$last_id.'';
+$data[0]['pdf'] = 'http://ayam-ku-nandohidayat.c9users.io/api/jual/pdf.php?gerai='.$gerai.'&username='.$puser.'&total='.$ptotal.'&bayar='.$pbayar.'&id_jual='.$last_id.'';
 
 for($i = 0; $i < sizeof($items); $i++) {
     $data[0]['pdf'] .= '&items[]='.$items[$i].'';

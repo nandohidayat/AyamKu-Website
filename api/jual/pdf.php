@@ -2,12 +2,13 @@
     require('../../fpdf/fpdf.php');
     include "../../koneksi_ip.php";
     
+    $gerai=$_GET['gerai'];
     $user=$_GET['username']; 
     $total=$_GET['total']; 
     $bayar=$_GET['bayar'];
     $id_jual=$_GET['id_jual'];
     $items=$_GET['items'];
-    $height = 108;
+    $height = 115;
     
     for($i = 0; $i < sizeof($items); $i++) {
         $query = "SELECT
@@ -32,9 +33,10 @@
     $pdf->SetFont('Arial', 'B', '15');
     $pdf->Cell(15);
     $pdf->Cell(30,10,'AyamKu',1,1,'C');
-    $pdf->Cell(50);
-    $pdf->Cell(10,10,''.$id_jual.'',0,1,'C');
-    $pdf->Ln(3);
+    $pdf->Ln(10);
+    $pdf->Cell(0,0,''.$gerai.'',0,0,'L');
+    $pdf->Cell(0,0,''.$id_jual.'',0,1,'R');
+    $pdf->Ln(10);
     
     $pdf->SetFont('Arial', '', '12');
     $pdf->Cell(0,0,'Nama Pelanggan:',0,1);
