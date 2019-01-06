@@ -16,3 +16,30 @@
 [29-Dec-2018 04:11:18 UTC] PHP Stack trace:
 [29-Dec-2018 04:11:18 UTC] PHP   1. {main}() /home/ubuntu/workspace/api/barang.php:0
 [29-Dec-2018 04:11:18 UTC] PHP   2. mysqli_close() /home/ubuntu/workspace/api/barang.php:9
+[05-Jan-2019 14:53:22 UTC] PHP Fatal error:  Function name must be a string in /home/ubuntu/workspace/api/stok.php on line 4
+[05-Jan-2019 14:53:22 UTC] PHP Stack trace:
+[05-Jan-2019 14:53:22 UTC] PHP   1. {main}() /home/ubuntu/workspace/api/stok.php:0
+[05-Jan-2019 15:03:52 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/ubuntu/workspace/api/stok.php on line 9
+[05-Jan-2019 15:03:52 UTC] PHP Stack trace:
+[05-Jan-2019 15:03:52 UTC] PHP   1. {main}() /home/ubuntu/workspace/api/stok.php:0
+[05-Jan-2019 15:03:52 UTC] PHP   2. mysqli_fetch_assoc() /home/ubuntu/workspace/api/stok.php:9
+[05-Jan-2019 15:04:43 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/ubuntu/workspace/api/stok.php on line 9
+[05-Jan-2019 15:04:43 UTC] PHP Stack trace:
+[05-Jan-2019 15:04:43 UTC] PHP   1. {main}() /home/ubuntu/workspace/api/stok.php:0
+[05-Jan-2019 15:04:43 UTC] PHP   2. mysqli_fetch_assoc() /home/ubuntu/workspace/api/stok.php:9
+[05-Jan-2019 15:06:49 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/ubuntu/workspace/api/stok.php on line 14
+[05-Jan-2019 15:06:49 UTC] PHP Stack trace:
+[05-Jan-2019 15:06:49 UTC] PHP   1. {main}() /home/ubuntu/workspace/api/stok.php:0
+[05-Jan-2019 15:06:49 UTC] PHP   2. mysqli_fetch_assoc() /home/ubuntu/workspace/api/stok.php:14
+[05-Jan-2019 15:11:02 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/ubuntu/workspace/api/stok.php on line 14
+[05-Jan-2019 15:11:02 UTC] PHP Stack trace:
+[05-Jan-2019 15:11:02 UTC] PHP   1. {main}() /home/ubuntu/workspace/api/stok.php:0
+[05-Jan-2019 15:11:02 UTC] PHP   2. mysqli_fetch_assoc() /home/ubuntu/workspace/api/stok.php:14
+[05-Jan-2019 15:13:47 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/ubuntu/workspace/api/stok.php on line 16
+[05-Jan-2019 15:13:47 UTC] PHP Stack trace:
+[05-Jan-2019 15:13:47 UTC] PHP   1. {main}() /home/ubuntu/workspace/api/stok.php:0
+[05-Jan-2019 15:13:47 UTC] PHP   2. mysqli_fetch_assoc() /home/ubuntu/workspace/api/stok.php:16
+[05-Jan-2019 15:14:14 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/ubuntu/workspace/api/stok.php on line 16
+[05-Jan-2019 15:14:14 UTC] PHP Stack trace:
+[05-Jan-2019 15:14:14 UTC] PHP   1. {main}() /home/ubuntu/workspace/api/stok.php:0
+[05-Jan-2019 15:14:14 UTC] PHP   2. mysqli_fetch_assoc() /home/ubuntu/workspace/api/stok.php:16
