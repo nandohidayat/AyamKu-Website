@@ -118,3 +118,32 @@ Stack trace:
 [06-Jan-2019 13:48:42 UTC] PHP Fatal error:  Maximum execution time of 300 seconds exceeded in /home/ubuntu/workspace/api/jual/create.php on line 22
 [06-Jan-2019 13:48:42 UTC] PHP Stack trace:
 [06-Jan-2019 13:48:42 UTC] PHP   1. {main}() /home/ubuntu/workspace/api/jual/create.php:0
+[06-Jan-2019 16:00:03 UTC] PHP Warning:  include(../koneksi_ip.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/api/jual/pdf.php on line 3
+[06-Jan-2019 16:00:03 UTC] PHP Stack trace:
+[06-Jan-2019 16:00:03 UTC] PHP   1. {main}() /home/ubuntu/workspace/api/jual/pdf.php:0
+[06-Jan-2019 16:00:03 UTC] PHP Warning:  include(): Failed opening '../koneksi_ip.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/api/jual/pdf.php on line 3
+[06-Jan-2019 16:00:03 UTC] PHP Stack trace:
+[06-Jan-2019 16:00:03 UTC] PHP   1. {main}() /home/ubuntu/workspace/api/jual/pdf.php:0
+[06-Jan-2019 16:00:03 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/ubuntu/workspace/api/jual/pdf.php on line 19
+[06-Jan-2019 16:00:03 UTC] PHP Stack trace:
+[06-Jan-2019 16:00:03 UTC] PHP   1. {main}() /home/ubuntu/workspace/api/jual/pdf.php:0
+[06-Jan-2019 16:00:03 UTC] PHP   2. mysqli_query() /home/ubuntu/workspace/api/jual/pdf.php:19
+[06-Jan-2019 16:00:03 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/ubuntu/workspace/api/jual/pdf.php on line 21
+[06-Jan-2019 16:00:03 UTC] PHP Stack trace:
+[06-Jan-2019 16:00:03 UTC] PHP   1. {main}() /home/ubuntu/workspace/api/jual/pdf.php:0
+[06-Jan-2019 16:00:03 UTC] PHP   2. mysqli_fetch_assoc() /home/ubuntu/workspace/api/jual/pdf.php:21
+[06-Jan-2019 16:00:03 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/ubuntu/workspace/api/jual/pdf.php on line 19
+[06-Jan-2019 16:00:03 UTC] PHP Stack trace:
+[06-Jan-2019 16:00:03 UTC] PHP   1. {main}() /home/ubuntu/workspace/api/jual/pdf.php:0
+[06-Jan-2019 16:00:03 UTC] PHP   2. mysqli_query() /home/ubuntu/workspace/api/jual/pdf.php:19
+[06-Jan-2019 16:00:03 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/ubuntu/workspace/api/jual/pdf.php on line 21
+[06-Jan-2019 16:00:03 UTC] PHP Stack trace:
+[06-Jan-2019 16:00:03 UTC] PHP   1. {main}() /home/ubuntu/workspace/api/jual/pdf.php:0
+[06-Jan-2019 16:00:03 UTC] PHP   2. mysqli_fetch_assoc() /home/ubuntu/workspace/api/jual/pdf.php:21
+[06-Jan-2019 16:00:03 UTC] PHP Fatal error:  Uncaught exception 'Exception' with message 'FPDF error: Some data has already been output, can't send PDF file' in /home/ubuntu/workspace/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/ubuntu/workspace/fpdf/fpdf.php(1063): FPDF->Error('Some data has a...')
+#1 /home/ubuntu/workspace/fpdf/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/ubuntu/workspace/api/jual/pdf.php(69): FPDF->Output('', 'Nota Pembelian ...')
+#3 {main}
+  thrown in /home/ubuntu/workspace/fpdf/fpdf.php on line 271

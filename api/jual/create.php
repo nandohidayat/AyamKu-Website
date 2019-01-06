@@ -40,6 +40,10 @@ if(mysqli_query($conn, $query)) {
 
 $data[0]['pdf'] = 'http://ayam-ku-nandohidayat.c9users.io/api/jual/pdf.php?username='.$puser.'&total='.$ptotal.'&bayar='.$pbayar.'&id_jual='.$last_id.'';
 
+for($i = 0; $i < sizeof($items); $i++) {
+    $data[0]['pdf'] .= '&items[]='.$items[$i].'';
+}
+
 echo json_encode($data);
 
 mysqli_close($conn); 
