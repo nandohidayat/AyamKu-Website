@@ -2,6 +2,8 @@
  
 $conn = mysqli_connect("localhost","nandohidayat", "", "penjualan"); 
  
+ #RAISSSSSSSSSSSSSSSSSSSSSSSS
+ 
 $puser = $_GET['username']; $ptotal = $_GET['total']; $pbayar = $_GET['bayar']; $items = $_GET["items"];
  
 $query = "insert into jual (user_id, total, bayar) values ('".$puser."',".$ptotal.",".$pbayar.")"; 
