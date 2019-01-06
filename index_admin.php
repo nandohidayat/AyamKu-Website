@@ -280,7 +280,10 @@
                             <span class="profile-ava">
                                 <img alt="" src="img/a71b.ico">
                             </span>
-                            <span class="username">ajibsusanto</span>
+                            <?php 
+                                echo '<span class="username">'.$_SESSION['namauser'].'</span>'
+                            ?> 
+                            
                             <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu extended logout">
