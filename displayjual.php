@@ -35,50 +35,56 @@ if (confirm ("Apakah Anda yakin akan menghapus barang ini ?")) {
                           <table class="table table-striped table-advance table-hover">
                            <tbody>
                               <tr>
-                                 <th><i class="icon_profile"></i> Kode</th>
+                                 <th><i class="icon_profile"></i> ID</th>
                                  <th><i class="icon_mail_alt"></i> Nama Gerai</th>
-                                 <th><i class="icon_mobile"></i> Phone</th>
-								 <th><i class="icon_mobile"></i> SMS</th>
-								 <th><i class="icon_calendar"></i> Latitude</th>
-								 <th><i class="icon_calendar"></i> Longitude</th>
-                                 <th><i class="icon_cogs"></i> Action</th>
+                                 <th><i class="icon_mobile"></i> User</th>
+								 <th><i class="icon_mobile"></i> Total</th>
+								 <th><i class="icon_calendar"></i> Bayar</th>
                               </tr>
 
 
 
 <?php
-
-    $query = "SELECT 
-    			* 
+	$gerai = $_GET['gerai'];
+	
+	if(!$gerai) {
+		$query = "SELECT 
+    			jual.*, gerai.nama 
     		FROM 
-    			gerai 
+    			jual
+    		INNER JOIN
+    			gerai ON jual.kd_gerai = gerai.kd_gerai
     		ORDER BY 
-    			kd_gerai";
+    			jual.id_jual";	
+	} else {
+		$query = "SELECT 
+    			jual.*, gerai.nama 
+    		FROM 
+    			jual
+    		INNER JOIN
+    			gerai ON jual.kd_gerai = gerai.kd_gerai
+    		WHERE
+    			jual.kd_gerai = '".$gerai."'
+    		ORDER BY 
+    			jual.id_jual";
+	}
   $sql = mysqli_query ($conn,$query);
   //echo "<a href='tambahbarang.php'>Add</a>";
  	while ($hasil = mysqli_fetch_array ($sql)) {
-		$kode = $hasil['kd_gerai'];
+		$id_jual = $hasil['id_jual'];
 		$nama = stripslashes ($hasil['nama']);
-		$phone = stripslashes ($hasil['phone']);
-		$sms = stripslashes ($hasil['sms']);
-		$latitude = $hasil['latitude'];
-		$longitude = $hasil['longitude'];
+		$user = stripslashes ($hasil['user_id']);
+		$total = $hasil['total'];
+		$bayar = $hasil['bayar'];
 	//tampilkan barang
 		echo "<tr>
-		<td align='center'>$kode</td>
+		<td align='center'>$id_jual</td>
 		<td align='left' >$nama</td>
-		<td align='right'>$phone</td>
-		<td align='right'>$sms</td>
-		<td align='right'>$latitude</td>
-		<td align='right'>$longitude</td>";
+		<td align='left'>$user</td>
+		<td align='right'>$total</td>
+		<td align='right'>$bayar</td>";
 		?>
-		<td>
-		                          <div class="btn-group">
-                                      <a class="btn btn-primary" href="<?php echo "index_admin.php?page=tambahgerai"?>"><i class="icon_plus_alt2"></i></a>
-                                      <a class="btn btn-success" href="<?php echo "index_admin.php?page=editgerai&id=$kode"?>"><i class="icon_check_alt2"></i></a>
-                                      <a class="btn btn-danger" onClick='return tanya()' href="<?php echo "index_admin.php?page=hapusbarang&id=$kode"?>"><i class="icon_close_alt2"></i></a>
-                                  </div>
-                                  </td>
+		
                               </tr>
 	        <?php } ?>
 		</tbody>

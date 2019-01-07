@@ -1,3 +1,6 @@
+<?php
+	include "koneksi_ip.php"
+?>
       <aside>
           <div id="sidebar"  class="nav-collapse ">
               <!-- sidebar menu start-->
@@ -27,8 +30,17 @@
                           <span class="menu-arrow arrow_carrot-right"></span>
                       </a>
                       <ul class="sub">
-                          <li><a class="" href="index.php?page=bukutamu">Buku Tamu</a></li>                          
-                          <li><a class="" href="index.php?page=berita">Berita</a></li>
+                          <li><a class="" href="index_admin.php?page=displayjual">Penjualan</a></li>                          
+                          <?php 
+                            $query = "SELECT
+                                        *
+                                    FROM
+                                        gerai";
+                            $sql = mysqli_query ($conn,$query);
+                         	while ($hasil = mysqli_fetch_array ($sql)) { 
+                         	    echo "<li><a class='' href='index_admin.php?page=displayjual&gerai=".$hasil['kd_gerai']."'>".$hasil['nama']."</a></li>";
+                         	}
+                          ?>
                       </ul>
                   </li> 				  
                   
