@@ -1,7 +1,8 @@
 <?php
 include "koneksi_ip.php";
-if (isset($_GET['id'])) {
-$kode = $_GET['id'];
+if (isset($_GET['id1'])) {
+$kd_gerai = $_GET['id1'];
+$kd_brg = $_GET['id2'];
 } else {
 die ("Error. NO Id Selected! ");
 }
@@ -13,23 +14,17 @@ die ("Error. NO Id Selected! ");
 
 <?php
 //proses delete barang
-if (!empty($kode) && $kode != "") {
+if (!empty($kd_gerai) && $kd_gerai != "") {
     
-    $query = "SELECT * FROM barang WHERE kd_brg='$kode'";
-    $sql = mysqli_query ($conn,$query);
-    $hasil = mysqli_fetch_array ($sql);
-    $filename = $hasil['image'];
-    unlink('img/uploads/'.$filename);
-    
-    $query = "DELETE FROM barang WHERE kd_brg='$kode'";
+    $query = "DELETE FROM stok WHERE kd_brg='$kd_brg' AND kd_gerai='$kd_gerai'";
     $sql = mysqli_query ($conn,$query);
     
     if ($sql) {
-        echo "<h2><font color=blue>Barang telah berhasil dihapus</font></h2>";
+        echo "<h2><font color=blue>Stok telah berhasil dihapus</font></h2>";
     } else {
-        echo "<h2><font color=red>Barang gagal dihapus</font></h2>";
+        echo "<h2><font color=red>Stok gagal dihapus</font></h2>";
     }
-    echo "Klik <a href='index_admin.php?page=displaybarang'>di sini</a> untuk kembali ke halaman display barang";
+    echo "Klik <a href='index_admin.php?page=displaystok'>di sini</a> untuk kembali ke halaman display stok";
 } else {
     die ("Access Denied");
 }

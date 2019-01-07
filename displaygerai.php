@@ -7,7 +7,7 @@
 
 <script language="javascript">
 function tanya() {
-if (confirm ("Apakah Anda yakin akan menghapus barang ini ?")) {
+if (confirm ("Apakah Anda yakin akan menghapus gerai ini ?")) {
 	return true;
 } else {
 	return false;
@@ -76,7 +76,7 @@ if (confirm ("Apakah Anda yakin akan menghapus barang ini ?")) {
 		                          <div class="btn-group">
                                       <a class="btn btn-primary" href="<?php echo "index_admin.php?page=tambahgerai"?>"><i class="icon_plus_alt2"></i></a>
                                       <a class="btn btn-success" href="<?php echo "index_admin.php?page=editgerai&id=$kode"?>"><i class="icon_check_alt2"></i></a>
-                                      <a class="btn btn-danger" onClick='return tanya()' href="<?php echo "index_admin.php?page=hapusbarang&id=$kode"?>"><i class="icon_close_alt2"></i></a>
+                                      <a class="btn btn-danger" onClick='return tanya()' href="<?php echo "index_admin.php?page=hapusgerai&id=$kode"?>"><i class="icon_close_alt2"></i></a>
                                   </div>
                                   </td>
                               </tr>

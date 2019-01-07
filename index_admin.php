@@ -337,8 +337,10 @@
 			case "hapusbarang" : include("hapusbarang.php");break;
 			case "displaygerai" : include("displaygerai.php");break;
 			case "tambahgerai" : include("tambahgerai.php");break;
+			case "hapusgerai" : include("hapusgerai.php");break;
 			case "displaystok" : include("displaystok.php");break;
 			case "tambahstok" : include("tambahstok.php");break;
+			case "hapusstok" : include("hapusstok.php");break;
 			case "displayjual" : include("displayjual.php");break;
 		//	case "bukutamu" : include("display_bt.php");break;
 		//	case "berita" : include("display_berita.php");break;
