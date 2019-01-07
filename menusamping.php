@@ -16,8 +16,8 @@
                       </a>
                       <ul class="sub">
 						  <li><a class="" href="index_admin.php?page=displaybarang">Barang</a></li>	
-                          <li><a class="" href="index_admin.php?page=bukutamu">Buku Tamu</a></li>                          
-                          <li><a class="" href="index_admin.php?page=berita">Berita</a></li>
+                          <li><a class="" href="index_admin.php?page=displaygerai">Gerai</a></li>                          
+                          <li><a class="" href="index_admin.php?page=displaystok">Stok</a></li>
                       </ul>
                   </li> 
 					<li class="sub-menu">

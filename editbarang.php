@@ -11,10 +11,11 @@ $hasil = mysqli_fetch_array ($sql);
 $kode = $hasil['kd_brg'];
 $nama = stripslashes ($hasil['nm_brg']);
 $satuan = stripslashes ($hasil['satuan']);
-$harga = $hasil['harga'];
+$harga = $hasil['harga_jual'];
 $hargabeli = $hasil['harga_beli'];
-$stok= $hasil['stok'];
 $stok_min = $hasil['stok_min'];
+$desc = $hasil['desc'];
+$image = $hasil['image'];
 
 //proses edit barang
 if (isset($_POST['Edit'])) {
@@ -23,11 +24,38 @@ if (isset($_POST['Edit'])) {
 	$satuan = $_POST['satuan'];
 	$harga = $_POST['harga'];
 	$hargabeli = $_POST['hargabeli'];
-	$stok = $_POST['stok'];
 	$stok_min = $_POST['stok_min'];
-
+	$desc = $_POST['desc'];
+	$fileName = $_FILES["image"]["name"];
+	
+	if(!empty($fileName) && $fileName != $image) {
+		unlink('img/uploads/'.$image);
+		
+		$targetDir = "img/uploads/";
+		$fileName = basename($_FILES["image"]["name"]);
+		$targetFilePath = $targetDir . $fileName;
+		$imageFileType = strtolower(pathinfo($targetFilePath,PATHINFO_EXTENSION));
+		
+		if(!empty($_FILES["image"]["name"])){
+		    // Allow certain file formats
+		    $allowTypes = array('jpg','png','jpeg','gif','pdf');
+		    if(in_array($imageFileType, $allowTypes)){
+		        // Upload file to server
+		        if(move_uploaded_file($_FILES["image"]["tmp_name"], $targetFilePath)){
+		        	$statusMsg = "The file ".$fileName. " has been uploaded successfully."; 
+		        }else{
+		            $statusMsg = "Sorry, there was an error uploading your file.";
+		        }
+		    }else{
+		        $statusMsg = 'Sorry, only JPG, JPEG, PNG, GIF, & PDF files are allowed to upload.';
+		    }
+		}else{
+		    $statusMsg = 'Please select a file to upload.';
+		}	
+	}
+	
 //update barang
-$query = "UPDATE barang SET nm_brg='$nama',satuan='$satuan', harga='$harga', harga_beli='$hargabeli',stok='$stok',stok_min='$stok_min' WHERE kd_brg='$kode'";
+$query = "UPDATE barang SET nm_brg='$nama',satuan='$satuan', harga_jual='$harga', harga_beli='$hargabeli',stok_min='$stok_min', desc='$desc', image='$fileName' WHERE kd_brg='$kode'";
 $sql = mysqli_query ($conn,$query);
 if ($sql) {
 	echo "<h2><font color=blue>barang telah berhasil diedit</font></h2>";
@@ -70,13 +98,18 @@ echo "<meta http-equiv='refresh' content='0;URL=index_admin.php?page=displaybara
 <td>: <input type="text" name="hargabeli" size="10" value="<?php echo $hargabeli?>"></td>
 </tr>
 <tr>
-<td>Stok</td>
-<td>: <input type="text" name="stok" size="10" value="<?php echo $stok?>"></td>
-</tr>
-<tr>
 <td>Stok Minimal</td>
 <td>: <input type="text" name="stok_min" size="10" value="<?php echo $stok_min?>"></td>
 </tr>
+<tr>
+<td>Description</td>
+<td>: <textarea name="desc"><?php echo $desc ?></textarea></td>
+</tr>
+<tr>
+<td>Gambar</td>
+<td>: <input type="file" name="image" size="10"></td>
+</tr>
+<tr>
 <tr>
 <td>&nbsp;</td>
 <td>&nbsp;&nbsp;
