@@ -60,7 +60,7 @@
     
     for($i = 0; $i < sizeof($output); $i++) {
         $pdf->Cell(0,0,'  '.$output[$i]['nm_brg'],0,0,'L');
-        $pdf->Cell(0,0,'Rp '.$output[$i]['harga_jual'],0,1,'R');
+        $pdf->Cell(0,0,'Rp '.$output[$i]['harga_jual'].".0",0,1,'R');
         $pdf->Ln(6);
     } 
     
@@ -78,7 +78,7 @@
     $pdf->Ln(10);
     
     $pdf->Cell(0,0,'Kembalian:',0,1);
-    $pdf->Cell(0,0,'Rp '.($bayar - $total),0,1,'R');
+    $pdf->Cell(0,0,'Rp '.($bayar - $total).'.0',0,1,'R');
     
     $pdf->Output('','Nota Pembelian '.$id_jual.'');
 ?>
