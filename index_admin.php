@@ -335,6 +335,8 @@
 			case "editbarang" : include("editbarang.php");break;
 			case "tambahbarang" : include("tambahbarang.php");break;
 			case "hapusbarang" : include("hapusbarang.php");break;
+			case "displaygerai" : include("displaygerai.php");break;
+			case "tambahgerai" : include("tambahgerai.php");break;
 		//	case "bukutamu" : include("display_bt.php");break;
 		//	case "berita" : include("display_berita.php");break;
 			default: include("dashboard.php");break;

@@ -8,13 +8,13 @@ if (isset($_POST['Edit'])) {
 	$satuan = $_POST['satuan'];
 	$harga = $_POST['harga'];
 	$hargabeli = $_POST['hargabeli'];
-	$stok = $_POST['stok'];
+	// $stok = $_POST['stok'];
 	$stok_min = $_POST['stok_min'];
 	$desc = $_POST['desc'];
 	$fileName = $_FILES["image"]["name"];
 	
 	//insert barang
-	$query = "INSERT INTO barang values('$kode','$nama','$satuan','$harga','$hargabeli','$stok','$stok_min','$desc','$fileName')";
+	$query = "INSERT INTO barang values('$kode','$nama','$satuan','$harga','$hargabeli','$stok_min','$desc','$fileName')";
 	$sql = mysqli_query ($conn,$query);
 	
 	$targetDir = "img/uploads/";
@@ -79,10 +79,10 @@ echo "<meta http-equiv='refresh' content='0;URL=index_admin.php?page=displaybara
 <td>Harga Beli</td>
 <td>: <input type="text" name="hargabeli" size="10" value=""></td>
 </tr>
-<tr>
-<td>Stok</td>
-<td>: <input type="text" name="stok" size="10" value=""></td>
-</tr>
+<!--<tr>-->
+<!--<td>Stok</td>-->
+<!--<td>: <input type="text" name="stok" size="10" value=""></td>-->
+<!--</tr>-->
 <tr>
 <td>Stok Minimal</td>
 <td>: <input type="text" name="stok_min" size="10" value=""></td>

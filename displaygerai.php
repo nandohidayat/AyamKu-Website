@@ -36,11 +36,11 @@ if (confirm ("Apakah Anda yakin akan menghapus barang ini ?")) {
                            <tbody>
                               <tr>
                                  <th><i class="icon_profile"></i> Kode</th>
-                                 <th><i class="icon_mail_alt"></i> Nama Barang</th>
-                                 <th><i class="icon_pin_alt"></i> Satuan</th>
-                                 <th><i class="icon_mobile"></i> Harga Jual</th>
-								 <th><i class="icon_calendar"></i> Harga Beli</th>
-								 <th><i class="icon_calendar"></i> Stok Min</th>
+                                 <th><i class="icon_mail_alt"></i> Nama Gerai</th>
+                                 <th><i class="icon_mobile"></i> Phone</th>
+								 <th><i class="icon_mobile"></i> SMS</th>
+								 <th><i class="icon_calendar"></i> Latitude</th>
+								 <th><i class="icon_calendar"></i> Longitude</th>
                                  <th><i class="icon_cogs"></i> Action</th>
                               </tr>
 
@@ -48,34 +48,33 @@ if (confirm ("Apakah Anda yakin akan menghapus barang ini ?")) {
 
 <?php
     $query = "SELECT 
-    			barang.*
+    			* 
     		FROM 
-    			barang 
+    			gerai 
     		ORDER BY 
-    			kd_brg";
+    			kd_gerai";
   $sql = mysqli_query ($conn,$query);
   //echo "<a href='tambahbarang.php'>Add</a>";
  	while ($hasil = mysqli_fetch_array ($sql)) {
-		$kode = $hasil['kd_brg'];
-		$nama = stripslashes ($hasil['nm_brg']);
-		$satuan = stripslashes ($hasil['satuan']);
-		$harga = $hasil['harga_jual'];
-		$hargabeli = $hasil['harga_beli'];
-		// $stok= $hasil['stok'];
-		$stok_min = $hasil['stok_min'];
+		$kode = $hasil['kd_gerai'];
+		$nama = stripslashes ($hasil['nama']);
+		$phone = stripslashes ($hasil['phone']);
+		$sms = stripslashes ($hasil['sms']);
+		$latitude = $hasil['latitude'];
+		$longitude = $hasil['longitude'];
 	//tampilkan barang
 		echo "<tr>
 		<td align='center'>$kode</td>
 		<td align='left' >$nama</td>
-		<td align='left'>$satuan</td>
-		<td align='right'>$harga</td>
-		<td align='right'>$hargabeli</td>
-		<td align='right'>$stok_min</td>";
+		<td align='right'>$phone</td>
+		<td align='right'>$sms</td>
+		<td align='right'>$latitude</td>
+		<td align='right'>$longitude</td>";
 		?>
 		<td>
 		                          <div class="btn-group">
-                                      <a class="btn btn-primary" href="<?php echo "index_admin.php?page=tambahbarang"?>"><i class="icon_plus_alt2"></i></a>
-                                      <a class="btn btn-success" href="<?php echo "index_admin.php?page=editbarang&id=$kode"?>"><i class="icon_check_alt2"></i></a>
+                                      <a class="btn btn-primary" href="<?php echo "index_admin.php?page=tambahgerai"?>"><i class="icon_plus_alt2"></i></a>
+                                      <a class="btn btn-success" href="<?php echo "index_admin.php?page=editgerai&id=$kode"?>"><i class="icon_check_alt2"></i></a>
                                       <a class="btn btn-danger" onClick='return tanya()' href="<?php echo "index_admin.php?page=hapusbarang&id=$kode"?>"><i class="icon_close_alt2"></i></a>
                                   </div>
                                   </td>
