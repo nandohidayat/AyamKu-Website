@@ -49,6 +49,11 @@ table tr th { color: #688a7e;}
     height: 100%;
 }
 
+span.forjual {
+    display: inline-block;
+    min-width: 200px;
+}
+
 .Creative-pro, .Creative-pro h3{
     display: block;
     position: fixed;
@@ -4938,3 +4943,4 @@ span.customSelect.changed {
 .customSelectInner {
     background:url(../img/customSelect-arrow.gif) no-repeat center right;
 }
+
